@@ -1,0 +1,33 @@
+/* 仅在首页（webgl-fluid-home / home / index）强制居中打字机，不改导航 */
+body.webgl-fluid-home .index-banner,
+body.home .index-banner,
+body.index .index-banner,
+body.webgl-fluid-home .hero,
+body.home .hero,
+body.index .hero {
+  display: flex !important;
+  align-items: center !important;
+  /* 垂直居中 */
+  justify-content: center !important;
+  /* 水平居中 */
+  min-height: calc(100vh - var(--site-header-height, 64px)) !important;
+  padding-top: var(--site-header-height, 64px) !important;
+  box-sizing: border-box !important;
+}
+
+/* 只影响首页的 typing 元素：确保水平排布且处于中间 */
+body.webgl-fluid-home .index-banner .typing,
+body.home .index-banner .typing,
+body.index .index-banner .typing,
+body.webgl-fluid-home .hero .typing,
+body.home .hero .typing,
+body.index .hero .typing {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  writing-mode: horizontal-tb !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+  z-index: 2 !important;
+}
